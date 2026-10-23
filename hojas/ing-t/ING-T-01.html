@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ING-T-01 El mapa del tiempo</title>
+<link rel="stylesheet" href="../../estilo/combi.css">
+<style>
+  @page { size: A4 landscape; }
+  .mapa {
+    display: grid;
+    grid-template-columns: 44mm repeat(3, 1fr);
+    grid-template-rows: 14mm repeat(4, 1fr);
+    height: 100%;
+    border-top: 0.3mm solid var(--negro);
+  }
+  .mapa > div { border-bottom: 0.25mm solid var(--gris-linea); padding: 1.2mm 2.4mm; }
+  .col-cab { border-left: 0.25mm solid var(--gris-linea); display: flex; flex-direction: column; justify-content: center; }
+  .col-cab .h2 { margin: 0; font-size: 12pt; }
+  .col-cab .chico { color: var(--gris); }
+  .col-cab.ahora .h2 { color: var(--bermellon); }
+  .carril { display: flex; flex-direction: column; justify-content: center; gap: 0.6mm; background: var(--gris-05); }
+  .carril .nombre { font-weight: 800; font-size: 10pt; letter-spacing: 0.04em; }
+  .carril .lente { font-family: var(--fuente-titulo); font-weight: 700; font-size: 12pt; }
+  .carril svg { width: 100%; height: 7mm; }
+  .celda { border-left: 0.25mm solid var(--gris-linea); display: flex; flex-direction: column; gap: 0.4mm; }
+  .celda .tit { display: flex; justify-content: space-between; align-items: baseline; gap: 2mm; }
+  .celda .tit b { font-family: var(--fuente-titulo); font-size: 11.5pt; }
+  .celda svg { width: 100%; height: 9mm; flex: none; }
+  .ej { color: var(--azul); font-weight: 600; font-size: 10.5pt; line-height: 1.2; margin: 0; }
+  .ej .aux { color: var(--ocre); }
+  .ej .v { text-decoration: underline; text-decoration-thickness: 0.3mm; text-underline-offset: 0.5mm; }
+  .tr { font-size: var(--t-chico); line-height: 1.15; margin: 0; }
+  .guia { font-size: 10pt; line-height: 1.2; display: flex; flex-direction: column; justify-content: center; gap: 0.6mm; }
+  .cabecera .lateral { max-width: 62mm; }
+  .cabecera .lateral svg { width: 64mm; height: 17mm; }
+</style>
+</head>
+<body>
+<div class="hoja apaisada">
+  <header class="cabecera">
+    <div class="codigo">ING-T-01</div>
+    <div>
+      <span class="coleccion">Inglés · Atlas de los tiempos verbales · 1 de 11 · visión general</span>
+      <h1 class="titulo" data-hero>El mapa del tiempo</h1>
+      <p class="bajada">12 tiempos = <b>3 momentos</b> × <b>4 maneras</b> de mirar. La historia es la tuya.</p>
+    </div>
+    <div class="lateral"><svg class="leyenda-lineas" aria-label="Leyenda de símbolos"></svg></div>
+  </header>
+
+  <main class="cuerpo">
+    <div class="mapa">
+      <!-- Encabezados de columna -->
+      <div class="guia"><span><b>Columna</b> → ¿desde cuándo?</span><span><b>Fila</b> → ¿cómo lo miro?</span></div>
+      <div class="col-cab"><span class="h2">PASADO</span><span class="chico">miro desde un momento pasado</span></div>
+      <div class="col-cab ahora"><span class="h2">PRESENTE</span><span class="chico">miro desde <b style="color:var(--bermellon)">ahora</b></span></div>
+      <div class="col-cab"><span class="h2">FUTURO</span><span class="chico">miro desde un momento futuro</span></div>
+
+      <!-- SIMPLE -->
+      <div class="carril">
+        <span class="nombre">SIMPLE</span>
+        <span class="lente">La foto</span>
+        <span class="chico">un hecho completo, o un hábito</span>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Past simple</b><span class="ref">U5</span></div>
+        <svg class="linea" data-tiempo="past-simple"></svg>
+        <p class="ej">I <span class="v">studied</span> construction in Argentina.</p>
+        <p class="tr">Estudié construcción en Argentina.</p>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Present simple</b><span class="ref">U2 · U3–4</span></div>
+        <svg class="linea" data-tiempo="present-simple"></svg>
+        <p class="ej">I <span class="v">study</span> English every day after lunch.</p>
+        <p class="tr">Estudio inglés todos los días después de comer.</p>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Future simple (will)</b><span class="ref">U21–23</span></div>
+        <svg class="linea" data-tiempo="future-simple"></svg>
+        <p class="ej">I<span class="aux">'ll</span> <span class="v">find</span> a good job there, I'm sure.</p>
+        <p class="tr">Voy a conseguir un buen trabajo allá, seguro.</p>
+      </div>
+
+      <!-- CONTINUO -->
+      <div class="carril">
+        <span class="nombre">CONTINUO</span>
+        <span class="lente">El video</span>
+        <span class="chico">algo en curso, con duración</span>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Past continuous</b><span class="ref">U6</span></div>
+        <svg class="linea" data-tiempo="past-continuous"></svg>
+        <p class="ej">I <span class="aux">was</span> <span class="v">working</span> in a warehouse when I decided to go.</p>
+        <p class="tr">Estaba trabajando en un depósito cuando decidí irme.</p>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Present continuous</b><span class="ref">U1 · U3–4</span></div>
+        <svg class="linea" data-tiempo="present-continuous"></svg>
+        <p class="ej">I<span class="aux">'m</span> <span class="v">learning</span> the verb tenses right now.</p>
+        <p class="tr">Estoy aprendiendo los tiempos verbales ahora.</p>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Future continuous</b><span class="ref">U24</span></div>
+        <svg class="linea" data-tiempo="future-continuous"></svg>
+        <p class="ej">This time next year I<span class="aux">'ll be</span> <span class="v">working</span> in New Zealand.</p>
+        <p class="tr">El año que viene a esta altura voy a estar trabajando en NZ.</p>
+      </div>
+
+      <!-- PERFECTO -->
+      <div class="carril">
+        <span class="nombre">PERFECTO</span>
+        <span class="lente">La huella</span>
+        <span class="chico">algo anterior, conectado con el momento desde donde miro</span>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Past perfect</b><span class="ref">U15</span></div>
+        <svg class="linea" data-tiempo="past-perfect"></svg>
+        <p class="ej">I <span class="aux">had</span> <span class="v">saved</span> some money before I applied for the visa.</p>
+        <p class="tr">Había ahorrado algo de plata antes de pedir la visa.</p>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Present perfect</b><span class="ref">U7–8 · U13–14</span></div>
+        <svg class="linea" data-tiempo="present-perfect"></svg>
+        <p class="ej">I<span class="aux">'ve</span> never <span class="v">been</span> to New Zealand.</p>
+        <p class="tr">Nunca fui a Nueva Zelanda <span class="gris">(hasta hoy)</span>.</p>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Future perfect</b><span class="ref">U24</span></div>
+        <svg class="linea" data-tiempo="future-perfect"></svg>
+        <p class="ej">By December I<span class="aux">'ll have</span> <span class="v">saved</span> enough money.</p>
+        <p class="tr">Para diciembre ya voy a haber ahorrado suficiente plata.</p>
+      </div>
+
+      <!-- PERFECTO CONTINUO -->
+      <div class="carril">
+        <span class="nombre">PERFECTO CONTINUO</span>
+        <span class="lente">El cronómetro</span>
+        <span class="chico">cuánto viene durando algo hasta el momento desde donde miro</span>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Past perfect continuous</b><span class="ref">U16</span></div>
+        <svg class="linea" data-tiempo="past-perfect-continuous"></svg>
+        <p class="ej">I <span class="aux">had been</span> <span class="v">thinking</span> about it for years when I finally decided.</p>
+        <p class="tr">Hacía años que lo venía pensando cuando por fin me decidí.</p>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Present perfect continuous</b><span class="ref">U9–12</span></div>
+        <svg class="linea" data-tiempo="present-perfect-continuous"></svg>
+        <p class="ej">I<span class="aux">'ve been</span> <span class="v">studying</span> for two hours.</p>
+        <p class="tr">Hace dos horas que estoy estudiando.</p>
+      </div>
+      <div class="celda">
+        <div class="tit"><b>Future perfect continuous</b></div>
+        <svg class="linea" data-tiempo="future-perfect-continuous"></svg>
+        <p class="ej">By June I<span class="aux">'ll have been</span> <span class="v">living</span> there for six months.</p>
+        <p class="tr">Para junio va a hacer seis meses que vivo allá. <span class="gris">(poco frecuente)</span></p>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="pie">
+    <span>ING-T-01 · versión 2 · 2026-10-16</span>
+    <span class="fuentes">Cómo se arma cada forma: ING-T-02 · más formas de futuro: ING-T-08 · U5 = unidad de Murphy, <i>English Grammar in Use</i>, 5.ª ed. (1, 7, 9, 13–20 y 25 verificadas contra el índice; el resto, a confirmar en tu ejemplar).</span>
+    <span>Enciclopedia para imprimir</span>
+  </footer>
+</div>
+<script src="../../estilo/lineas.js"></script>
+</body>
+</html>

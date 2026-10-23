@@ -1,0 +1,31 @@
+/* Hojas de escritura guiada: consignas + renglones + columna de corrección */
+.consigna { margin-bottom: 2mm; }
+.consigna .cab { display: grid; grid-template-columns: 5.5mm 1fr auto; gap: 1.5mm; align-items: baseline; }
+.consigna .cab .num { width: 4.6mm; height: 4.6mm; align-self: center; }
+.consigna .que { font-size: 10.5pt; line-height: 1.3; }
+.consigna .que b { font-family: var(--fuente-titulo); font-size: 12pt; }
+.consigna .pista { display: block; font-size: var(--t-chico); color: var(--gris); margin-top: 0.3mm; }
+.consigna .pista .en { font-weight: 600; }
+.consigna .ver { font-size: var(--t-micro); font-weight: 700; color: var(--gris); white-space: nowrap; }
+
+/* Renglones de 9 mm (letra de 10 pt o más pide renglón más alto) con la columna de corrección a la derecha (los crea renglones.js) */
+.escribir { margin: 1mm 0 0 7mm; }
+.escribir .renglon { display: grid; grid-template-columns: 1fr 30mm; height: 9mm; border-bottom: 0.22mm solid #b5b5b5; }
+.escribir .renglon > span:last-child { border-left: 0.25mm solid #b5b5b5; }
+
+/* Frases para traducir o corregir: una por renglón */
+.frases { margin: 1mm 0 0 7mm; }
+.frases .f {
+  display: grid;
+  grid-template-columns: 82mm 1fr 30mm;
+  align-items: end;
+  height: 9mm;
+  border-bottom: 0.22mm solid #b5b5b5;
+  font-size: 10.5pt;
+  padding-bottom: 0.8mm;
+}
+.frases .f > span:last-child { border-left: 0.25mm solid #b5b5b5; height: 100%; }
+.frases .f .letra { font-weight: 700; color: var(--gris); margin-right: 1mm; }
+
+.etiqueta-corr { text-align: right; font-size: var(--t-micro); color: var(--gris); margin: 0 0 0.6mm; letter-spacing: 0.05em; text-transform: uppercase; }
+.soluciones { transform: rotate(180deg); font-size: var(--t-chico); color: #333; text-align: center; margin-top: 1.5mm; }

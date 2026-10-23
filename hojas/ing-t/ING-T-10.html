@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ING-T-10 ¿Qué tiempo uso?</title>
+<link rel="stylesheet" href="../../estilo/combi.css">
+<link rel="stylesheet" href="../../estilo/atlas-tiempos.css">
+<style>
+  .flujo { display: grid; grid-template-columns: 27mm 43mm 52mm 1fr; column-gap: 8.5mm; row-gap: 2.6mm; align-items: center; }
+  .grupo-sep { grid-column: 1 / -1; border-top: 0.25mm solid var(--gris-linea); height: 0; margin: 0.8mm 0; }
+  .entrada { background: var(--gris-05); border: 0.5mm solid var(--negro); padding: 2.2mm; font-family: var(--fuente-titulo); font-weight: 800; font-size: 12pt; line-height: 1.15; }
+  .entrada small { display: block; font-family: var(--fuente-texto); font-weight: 400; font-size: var(--t-chico); color: #444; margin-top: 0.8mm; }
+  .pregunta { border: 0.4mm solid var(--negro); border-radius: 3mm; padding: 2mm 2.4mm; font-size: 10.5pt; font-weight: 700; line-height: 1.25; }
+  .pregunta small { display: block; font-weight: 400; font-size: var(--t-chico); color: #444; margin-top: 0.6mm; }
+  .resultado { border: 0.35mm solid var(--azul); border-left-width: 1.6mm; padding: 1.6mm 2.2mm; font-size: 10pt; line-height: 1.25; background: white; }
+  .resultado .t { font-family: var(--fuente-titulo); font-weight: 800; color: var(--azul); font-size: 12pt; display: block; }
+  .resultado .ej { font-size: 10pt; }
+  .resultado .cond { display: block; font-size: 10pt; font-weight: 700; color: #444; margin-bottom: 0.4mm; }
+  .nota { font-size: var(--t-chico); line-height: 1.3; border-left: 0.6mm solid var(--gris-linea); padding-left: 2mm; }
+  .resuelto { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 0.35mm solid var(--negro); }
+  .resuelto > div { padding: 2.2mm 2.6mm; font-size: 10pt; line-height: 1.3; }
+  .resuelto > div + div { border-left: 0.25mm dashed var(--gris-linea); }
+  .resuelto b.paso { display: block; font-size: 10pt; color: #444; margin-bottom: 0.6mm; }
+</style>
+</head>
+<body>
+<div class="hoja">
+  <header class="cabecera">
+    <div class="codigo">ING-T-10</div>
+    <div>
+      <span class="coleccion">Inglés · Atlas de los tiempos verbales · 10 de 11 · proceso</span>
+      <h1 class="titulo">¿Qué tiempo uso?</h1>
+      <p class="bajada">Un recorrido de preguntas para elegir el tiempo verbal. Seguí las flechas de izquierda a derecha.</p>
+    </div>
+    <div class="lateral">Cada caja azul es un tiempo verbal.<br>Detalle de cada uno: ING-T-04 a 09</div>
+  </header>
+
+  <main class="cuerpo">
+    <div class="flujo" data-hero>
+      <div class="entrada" id="a0" style="grid-column:1;grid-row:1/3">De ahora o de siempre</div>
+      <div class="pregunta" id="a1" style="grid-column:2;grid-row:1/3">¿Es habitual, permanente o un hecho general?</div>
+      <div class="resultado" id="a-ps" style="grid-column:3;grid-row:1"><span class="t">Present simple</span><span class="ej">I work in a warehouse.</span></div>
+      <div class="resultado" id="a-pc" style="grid-column:3;grid-row:2"><span class="t">Present continuous</span><span class="ej">I'm working on a farm this summer.</span></div>
+      <div class="nota" style="grid-column:4;grid-row:1/3">«No» quiere decir: está pasando ahora o es por un tiempo. Ojo: <span class="en">know, want, need, like</span> van en simple igual.</div>
+      <div class="grupo-sep" style="grid-row:3"></div>
+
+      <div class="entrada" id="b0" style="grid-column:1;grid-row:4/7">De algo que ya pasó<small>o que empezó antes de ahora</small></div>
+      <div class="pregunta" id="b1" style="grid-column:2;grid-row:4/7">¿Decís cuándo pasó, y ese momento ya terminó?<small>yesterday, last week, in 2019, two years ago</small></div>
+      <div class="resultado" id="b-ps" style="grid-column:3;grid-row:4/6"><span class="t">Past simple</span><span class="ej">I saw him yesterday.</span><span class="tr">El tiempo base para contar historias.</span></div>
+      <div class="resultado" id="b-pcont" style="grid-column:4;grid-row:4"><span class="cond">¿Estaba en curso cuando pasó otra cosa?</span><span class="t">Past continuous</span></div>
+      <div class="resultado" id="b-pperf" style="grid-column:4;grid-row:5"><span class="cond">¿Hay que volver más atrás?</span><span class="t">Past perfect</span></div>
+      <div class="resultado" id="b-pp" style="grid-column:3;grid-row:6"><span class="t">Present perfect</span><span class="ej">I've never been to New Zealand.</span><span class="tr">Sin fecha, o el período sigue.</span></div>
+      <div class="resultado" id="b-ppc" style="grid-column:4;grid-row:6"><span class="cond">¿Sigue, y te importa cuánto dura?</span><span class="t">Present perfect continuous</span></div>
+      <div class="grupo-sep" style="grid-row:7"></div>
+
+      <div class="entrada" id="c0" style="grid-column:1;grid-row:8/10">De algo que va a pasar</div>
+      <div class="pregunta" id="c1" style="grid-column:2;grid-row:8/10">¿Ya estaba decidido o arreglado de antes?</div>
+      <div class="resultado" id="c-gt" style="grid-column:3;grid-row:8"><span class="t">going to · present continuous</span><span class="ej">I'm going to apply in March.</span></div>
+      <div class="resultado" id="c-w" style="grid-column:3;grid-row:9"><span class="t">will</span><span class="ej">I'll help you. I think it'll rain.</span></div>
+      <div class="nota" style="grid-column:4;grid-row:8/10">Horario fijo → present simple. Desde un momento futuro → ING-T-09. Después de <span class="en">when, if</span> → presente.</div>
+    </div>
+
+    <div class="seccion" style="margin-top:7mm"><span class="num rojo">✓</span><span class="h2">Un ejemplo resuelto: «Hace tres años que estudio inglés»</span></div>
+    <div class="resuelto">
+      <div><b class="paso">1 · ¿De qué hablo?</b>De algo que empezó antes y sigue.</div>
+      <div><b class="paso">2 · ¿Digo cuándo terminó?</b>No: sigue hasta hoy. No es past simple.</div>
+      <div><b class="paso">3 · ¿Me importa cuánto dura?</b>Sí: «tres años».</div>
+      <div><b class="paso">4 · Resultado</b><span class="ej">I've been studying English for three years.</span></div>
+    </div>
+    <p style="margin:2.5mm 0 0">El error típico es traducir el presente del castellano: <span class="mal">I study English since three years.</span></p>
+  </main>
+
+  <footer class="pie">
+    <span>ING-T-10 · versión 2 · 2026-10-16</span>
+    <span class="fuentes">Basado en Murphy, <i>English Grammar in Use</i>, 5.ª ed., unidades 1–25. El recorrido simplifica: sirve para elegir rápido, no cubre todos los usos.</span>
+    <span>Enciclopedia para imprimir</span>
+  </footer>
+</div>
+<script src="../../estilo/conectores.js"></script>
+<script>
+  Conectores.dibujar('.flujo', [
+    ['a0', 'a1', '', 'h'], ['a1', 'a-ps', 'sí', 'h'], ['a1', 'a-pc', 'no', 'h'],
+    ['b0', 'b1', '', 'h'], ['b1', 'b-ps', 'sí', 'h'], ['b1', 'b-pp', 'no', 'h'],
+    ['b-ps', 'b-pcont', '', 'h'], ['b-ps', 'b-pperf', '', 'h'], ['b-pp', 'b-ppc', '', 'h'],
+    ['c0', 'c1', '', 'h'], ['c1', 'c-gt', 'sí', 'h'], ['c1', 'c-w', 'no', 'h'],
+  ]);
+</script>
+</body>
+</html>

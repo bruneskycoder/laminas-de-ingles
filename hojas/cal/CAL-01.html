@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>CAL-01 Hoja de calibración</title>
+<link rel="stylesheet" href="../../estilo/combi.css">
+<style>
+  .seccion-titulo { display: flex; align-items: center; gap: 2mm; margin: 0 0 1.5mm; }
+  .seccion-titulo h2 { margin: 0; }
+  .arriba { display: grid; grid-template-columns: 112mm 1fr; gap: 6mm; }
+  .parches { display: grid; grid-template-columns: 17mm repeat(4, 1fr); gap: 1.2mm 1.2mm; align-items: center; }
+  .parche { height: 8.5mm; border: 0.15mm solid #d9d9d9; }
+  .parches .cab { font-size: var(--t-micro); color: var(--gris); text-align: center; }
+  .parches .nom { font-size: var(--t-chico); font-weight: 600; }
+  .grises { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2mm; margin-top: 1.5mm; }
+  .grises div { height: 7mm; border: 0.15mm solid #d9d9d9; }
+  .muestras-color p { margin: 0.6mm 0; font-size: var(--t-chico); }
+  .textos { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 1mm; }
+  .opcion { border-top: 0.4mm solid var(--negro); padding-top: 1.5mm; }
+  .opcion .muestra-titulo { font-size: 15pt; font-weight: 800; line-height: 1.05; margin: 1mm 0 1.5mm; white-space: nowrap; }
+  .linea-tam { display: grid; grid-template-columns: 9mm 1fr; align-items: baseline; margin: 0.4mm 0; }
+  .linea-tam .et { font-size: var(--t-micro); color: var(--gris); }
+  .opcion-a, .opcion-a * { font-family: "Inter", sans-serif; }
+  .opcion-a .muestra-titulo { font-family: "Inter", sans-serif; }
+  .opcion-b { font-family: "Source Sans 3", sans-serif; }
+  .opcion-b .muestra-titulo { font-family: "Bitter", serif; }
+  .anotar { margin-top: 3.5mm; border: 0.4mm solid var(--negro); padding: 2.5mm 3mm 1mm; }
+  .anotar h2 { margin-bottom: 1mm; }
+  .campos { display: grid; grid-template-columns: 1fr 1fr; column-gap: 6mm; }
+  .campo { display: flex; align-items: end; gap: 2mm; height: 8mm; font-size: var(--t-chico); padding-bottom: 0.8mm; }
+  .campo .linea { flex: 1; border-bottom: 0.2mm solid var(--gris-linea); height: 4mm; }
+  .campo .opciones { color: var(--gris); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="hoja" data-letra-ok>
+
+  <header class="cabecera">
+    <div class="codigo">CAL-01</div>
+    <div>
+      <span class="coleccion">Calibración · antes de todo</span>
+      <h1 class="titulo">Hoja de calibración</h1>
+      <p class="bajada">Mide qué se lee y qué se ve bien en tu impresora y tu papel. Con lo que anotes abajo ajusto todas las hojas.</p>
+    </div>
+    <div class="lateral"><b>Cómo imprimirla</b><br>Escala: «Tamaño real» o 100 %<br>(nunca «Ajustar a página»)<br>Papel normal · calidad estándar</div>
+  </header>
+
+  <main class="cuerpo">
+    <div class="arriba">
+      <!-- 1 y 2: regla en L con las líneas adentro -->
+      <div>
+        <div class="seccion-titulo"><span class="num">1</span><h2>Regla en L y grosores de línea</h2></div>
+        <svg id="regla" width="112mm" height="112mm" viewBox="0 0 112 112" aria-label="Regla de 100 mm horizontal y vertical"></svg>
+        <p class="chico sin-margen">Medí las dos reglas con una regla común: cada una tiene que dar <b>100 mm</b>. Si da menos, la impresora achica la hoja. Adentro de la L: ¿cuál es la <b>línea más fina que se ve continua</b>?</p>
+      </div>
+
+      <!-- 3: tintas -->
+      <div>
+        <div class="seccion-titulo"><span class="num">2</span><h2>Las cuatro tintas</h2></div>
+        <div class="parches">
+          <span></span><span class="cab">10 %</span><span class="cab">25 %</span><span class="cab">50 %</span><span class="cab">100 %</span>
+          <span class="nom">Negro</span><div class="parche" style="background:color-mix(in srgb,var(--negro) 10%,white)"></div><div class="parche" style="background:color-mix(in srgb,var(--negro) 25%,white)"></div><div class="parche" style="background:color-mix(in srgb,var(--negro) 50%,white)"></div><div class="parche" style="background:var(--negro)"></div>
+          <span class="nom" style="color:var(--azul)">Azul</span><div class="parche" style="background:color-mix(in srgb,var(--azul) 10%,white)"></div><div class="parche" style="background:color-mix(in srgb,var(--azul) 25%,white)"></div><div class="parche" style="background:color-mix(in srgb,var(--azul) 50%,white)"></div><div class="parche" style="background:var(--azul)"></div>
+          <span class="nom" style="color:var(--ocre)">Ocre</span><div class="parche" style="background:color-mix(in srgb,var(--ocre) 10%,white)"></div><div class="parche" style="background:color-mix(in srgb,var(--ocre) 25%,white)"></div><div class="parche" style="background:color-mix(in srgb,var(--ocre) 50%,white)"></div><div class="parche" style="background:var(--ocre)"></div>
+          <span class="nom" style="color:var(--bermellon)">Bermellón</span><div class="parche" style="background:color-mix(in srgb,var(--bermellon) 10%,white)"></div><div class="parche" style="background:color-mix(in srgb,var(--bermellon) 25%,white)"></div><div class="parche" style="background:color-mix(in srgb,var(--bermellon) 50%,white)"></div><div class="parche" style="background:var(--bermellon)"></div>
+        </div>
+        <p class="micro gris" style="margin:2mm 0 0">Grises neutros: 5 · 10 · 20 · 30 · 40 %</p>
+        <div class="grises">
+          <div style="background:#f2f2f2"></div><div style="background:#e6e6e6"></div><div style="background:#cccccc"></div><div style="background:#b3b3b3"></div><div style="background:#999999"></div>
+        </div>
+        <p class="chico" style="margin:2mm 0 1mm">¿Se distinguen los cuatro colores entre sí? ¿Algún 10 % desaparece?</p>
+
+        <div class="seccion-titulo" style="margin-top:3mm"><span class="num">3</span><h2>Texto en color</h2></div>
+        <div class="muestras-color">
+          <p><span class="en">English in blue, bold, 8 pt</span> — así va el inglés.</p>
+          <p><span class="pron">ai jav LIVD jir</span> — así va la pronunciación (gris, cursiva).</p>
+          <p><span class="aux">have been</span> — auxiliares en ocre.</p>
+          <p><span style="color:var(--bermellon);font-weight:700">⚠ error típico</span> — alertas en bermellón.</p>
+          <p class="micro"><span class="en">English in blue, 7 pt</span> · <span class="pron">pronunciación a 7 pt</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4: tipografías -->
+    <div class="seccion-titulo" style="margin-top:3mm"><span class="num">4</span><h2>Dos tipografías: elegí una</h2></div>
+    <div class="textos">
+      <div class="opcion opcion-a">
+        <span class="versalitas">Opción A · Inter</span>
+        <div class="muestra-titulo">Atlas de los tiempos verbales</div>
+        <div data-letra-ok>
+          <div class="linea-tam"><span class="et">5 pt</span><span style="font-size:5pt">I have lived here since March.</span></div>
+          <div class="linea-tam"><span class="et">6 pt</span><span style="font-size:6pt">I have lived here since March.</span></div>
+        </div>
+        <div class="linea-tam"><span class="et">7 pt</span><span style="font-size:7pt">I have lived here since March.</span></div>
+        <div class="linea-tam"><span class="et">8 pt</span><span style="font-size:8pt">I have lived here since March.</span></div>
+        <div class="linea-tam"><span class="et">9 pt</span><span style="font-size:9pt">I have lived here since March.</span></div>
+        <div class="linea-tam"><span class="et">10 pt</span><span style="font-size:10pt">I have lived here since March.</span></div>
+        <div class="linea-tam"><span class="et">12 pt</span><span style="font-size:12pt">I have lived here since March.</span></div>
+      </div>
+      <div class="opcion opcion-b">
+        <span class="versalitas">Opción B · Bitter + Source Sans 3</span>
+        <div class="muestra-titulo">Atlas de los tiempos verbales</div>
+        <div data-letra-ok>
+          <div class="linea-tam"><span class="et">5 pt</span><span style="font-size:5pt">I have lived here since March.</span></div>
+          <div class="linea-tam"><span class="et">6 pt</span><span style="font-size:6pt">I have lived here since March.</span></div>
+        </div>
+        <div class="linea-tam"><span class="et">7 pt</span><span style="font-size:7pt">I have lived here since March.</span></div>
+        <div class="linea-tam"><span class="et">8 pt</span><span style="font-size:8pt">I have lived here since March.</span></div>
+        <div class="linea-tam"><span class="et">9 pt</span><span style="font-size:9pt">I have lived here since March.</span></div>
+        <div class="linea-tam"><span class="et">10 pt</span><span style="font-size:10pt">I have lived here since March.</span></div>
+        <div class="linea-tam"><span class="et">12 pt</span><span style="font-size:12pt">I have lived here since March.</span></div>
+      </div>
+    </div>
+
+    <!-- 5: para anotar -->
+    <section class="anotar">
+      <div class="seccion-titulo"><span class="num rojo">5</span><h2>Anotá y mandame una foto de este recuadro</h2></div>
+      <div class="campos">
+        <div class="campo"><span>La regla mide: horizontal</span><span class="linea"></span><span class="opciones">mm · vertical</span><span class="linea"></span><span class="opciones">mm</span></div>
+        <div class="campo"><span>Tipografía que preferís:</span><span class="opciones">A ☐   B ☐</span><span class="linea"></span></div>
+        <div class="campo"><span>Línea más fina que se ve continua:</span><span class="linea"></span><span class="opciones">mm</span></div>
+        <div class="campo"><span>¿La hoja se onduló o tardó en secar?</span><span class="opciones">sí ☐   no ☐</span><span class="linea"></span></div>
+        <div class="campo"><span>Texto más chico cómodo a 40 cm: A</span><span class="linea"></span><span class="opciones">pt · B</span><span class="linea"></span><span class="opciones">pt</span></div>
+        <div class="campo"><span>Configuración de impresión usada:</span><span class="linea"></span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <span>CAL-01 · versión 2.1 (paleta ajustada) · 2026-10-17</span>
+    <span class="fuentes">Sin datos externos. Los porcentajes son mezclas con blanco en pantalla; tu impresora los traduce a su manera, por eso se miden.</span>
+    <span>Enciclopedia para imprimir</span>
+  </footer>
+</div>
+
+<script>
+  // Dibuja la regla en L (unidades del SVG = milímetros) y las muestras de línea.
+  const svg = document.getElementById('regla');
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (tag, attrs, texto) => {
+    const e = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+    if (texto !== undefined) e.textContent = texto;
+    svg.appendChild(e);
+    return e;
+  };
+  const X0 = 9, Y0 = 104;          // esquina de la L
+  // Regla horizontal (100 mm)
+  el('line', { x1: X0, y1: Y0, x2: X0 + 100, y2: Y0, stroke: '#000', 'stroke-width': 0.3 });
+  for (let i = 0; i <= 100; i++) {
+    const largo = i % 10 === 0 ? 4 : i % 5 === 0 ? 2.6 : 1.5;
+    el('line', { x1: X0 + i, y1: Y0, x2: X0 + i, y2: Y0 + largo, stroke: '#000', 'stroke-width': i % 10 === 0 ? 0.25 : 0.12 });
+    if (i % 10 === 0) el('text', { x: X0 + i, y: Y0 + 7, 'font-size': 2.6, 'text-anchor': 'middle' }, String(i / 10));
+  }
+  el('text', { x: X0 + 100, y: Y0 + 4.2, 'font-size': 2.6, 'text-anchor': 'end', dx: -1.2, fill: '#5f5f5f' }, 'cm');
+  // Regla vertical (100 mm)
+  el('line', { x1: X0, y1: Y0, x2: X0, y2: Y0 - 100, stroke: '#000', 'stroke-width': 0.3 });
+  for (let i = 0; i <= 100; i++) {
+    const largo = i % 10 === 0 ? 4 : i % 5 === 0 ? 2.6 : 1.5;
+    el('line', { x1: X0, y1: Y0 - i, x2: X0 - largo, y2: Y0 - i, stroke: '#000', 'stroke-width': i % 10 === 0 ? 0.25 : 0.12 });
+    if (i % 10 === 0 && i > 0) el('text', { x: X0 - 5, y: Y0 - i + 0.9, 'font-size': 2.6, 'text-anchor': 'end' }, String(i / 10));
+  }
+  // Muestras de grosor: filas = grosores, columnas = tintas
+  const tintas = [['Negro', '#000000'], ['Azul', '#2458a6'], ['Ocre', '#b8741f'], ['Bermellón', '#d23c1e'], ['Gris', '#5f5f5f']];
+  const grosores = [0.1, 0.15, 0.2, 0.3, 0.5, 0.7];
+  const xIni = X0 + 17, ancho = 14, sep = 2.6;
+  tintas.forEach(([nombre, color], c) => {
+    el('text', { x: xIni + c * (ancho + sep) + ancho / 2, y: 9, 'font-size': 2.5, 'text-anchor': 'middle', fill: color, 'font-weight': 700 }, nombre);
+  });
+  grosores.forEach((g, f) => {
+    const y = 16 + f * 8.5;
+    el('text', { x: X0 + 3, y: y + 0.9, 'font-size': 2.5 }, String(g).replace('.', ',') + ' mm');
+    tintas.forEach(([, color], c) => {
+      const x = xIni + c * (ancho + sep);
+      el('line', { x1: x, y1: y, x2: x + ancho, y2: y, stroke: color, 'stroke-width': g });
+    });
+  });
+  // Tramas para áreas (las que usa el estilo Combi en superficies grandes)
+  const yT = 70;
+  el('text', { x: X0 + 3, y: yT - 2, 'font-size': 2.5, fill: '#5f5f5f' }, 'Tramas para áreas grandes:');
+  const defs = el('defs', {});
+  const patron = (id, contenido) => {
+    const p = document.createElementNS(NS, 'pattern');
+    p.setAttribute('id', id); p.setAttribute('patternUnits', 'userSpaceOnUse');
+    p.setAttribute('width', 1.2); p.setAttribute('height', 1.2);
+    p.innerHTML = contenido; defs.appendChild(p);
+  };
+  patron('rayado-azul', '<line x1="0" y1="1.2" x2="1.2" y2="0" stroke="#2458a6" stroke-width="0.15"/>');
+  patron('puntos-ocre', '<circle cx="0.6" cy="0.6" r="0.22" fill="#b8741f"/>');
+  patron('cruzado-negro', '<path d="M0 1.2 L1.2 0 M0 0 L1.2 1.2" stroke="#000" stroke-width="0.1"/>');
+  [['url(#rayado-azul)', 'rayado'], ['url(#puntos-ocre)', 'puntos'], ['url(#cruzado-negro)', 'cruzado'], ['#e9eef7', 'liso 10 %']].forEach(([fill, nombre], i) => {
+    const x = X0 + 4 + i * 23;
+    el('rect', { x, y: yT, width: 20, height: 14, fill, stroke: '#9a9a9a', 'stroke-width': 0.15 });
+    el('text', { x: x + 10, y: yT + 18, 'font-size': 2.5, 'text-anchor': 'middle', fill: '#5f5f5f' }, nombre);
+  });
+</script>
+</body>
+</html>

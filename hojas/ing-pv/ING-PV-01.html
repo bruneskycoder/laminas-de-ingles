@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ING-PV-01 Las partículas son direcciones</title>
+<link rel="stylesheet" href="../../estilo/combi.css">
+<link rel="stylesheet" href="../../estilo/llegada.css">
+<link rel="stylesheet" href="../../estilo/phrasal.css">
+<style>
+  .rosa { display: grid; grid-template-columns: 1fr 1fr; column-gap: 6mm; }
+  .dir { display: grid; grid-template-columns: 24mm 1fr; gap: 0 3mm; align-items: center; padding: 1.2mm 0 1.3mm; border-top: 0.25mm solid var(--gris-linea); }
+  .rosa .dir:nth-child(-n+2) { border-top: 0.4mm solid var(--negro); }
+  .dir svg.esquema { width: 24mm; height: 16mm; }
+  .dir .nom { font-family: var(--fuente-titulo); font-weight: 800; font-size: 15pt; line-height: 1; }
+  .dir .pron { font-size: 10pt; margin-left: 1mm; }
+  .dir .lit { font-weight: 700; font-size: 10.5pt; margin-left: 1.5mm; }
+  .dir p { margin: 0.7mm 0 0; font-size: 10pt; line-height: 1.25; }
+  .dir .en { font-weight: 600; }
+  .dir .l1 { display: flex; align-items: baseline; }
+  .dir .l1 .ref { margin-left: auto; }
+  .opuestos { font-size: 10pt; color: var(--gris); margin: 1mm 0 0; }
+
+  .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 3.5mm; }
+  table.contraste { width: 100%; border-collapse: collapse; }
+  .contraste th { text-align: left; font-size: 10pt; color: #333; border-bottom: 0.35mm solid var(--negro); padding: 0.8mm 1.2mm; vertical-align: bottom; }
+  .contraste td { font-size: 10.5pt; padding: 0.9mm 1.2mm; border-bottom: 0.2mm solid #d4d4d4; }
+  .contraste td.ing { color: var(--azul); font-weight: 600; }
+  .contraste td.ing b { text-decoration: underline; text-decoration-thickness: 0.3mm; text-underline-offset: 0.6mm; }
+  .contraste td.es b { color: var(--ocre); }
+  .nota { font-size: 10pt; line-height: 1.28; margin: 1.5mm 0 0; }
+
+  .patron { display: grid; grid-template-columns: 21mm 1fr; gap: 0 2.5mm; padding: 1mm 0; border-bottom: 0.2mm solid #d4d4d4; font-size: 10.5pt; line-height: 1.25; }
+  .patron:first-of-type { border-top: 0.35mm solid var(--negro); }
+  .patron .tipo { font-weight: 700; font-size: 10pt; }
+  .patron .pv { color: var(--azul); font-weight: 700; display: block; }
+  .patron .ok { color: var(--azul); }
+
+  .lista-seca { margin: 0; padding: 0; list-style: none; font-size: 10.5pt; line-height: 1.3; }
+  .lista-seca li { padding: 0.8mm 0; border-bottom: 0.2mm solid #d4d4d4; }
+  .lista-seca li:first-child { border-top: 0.35mm solid var(--negro); }
+</style>
+</head>
+<body>
+<div class="hoja">
+  <header class="cabecera">
+    <div class="codigo">ING-PV-01</div>
+    <div>
+      <span class="coleccion">Phrasal verbs por partícula · 1 de 9 · cómo leer la colección</span>
+      <h1 class="titulo">Las partículas son direcciones</h1>
+      <p class="bajada">Un <i>phrasal verb</i> es un verbo más una partícula. Si sabés hacia dónde apunta la partícula, muchos significados dejan de ser arbitrarios.</p>
+    </div>
+  </header>
+
+  <main class="cuerpo">
+    <div class="seccion"><span class="num azul">1</span><span class="h2">Las ocho direcciones y adónde llevan</span></div>
+    <div class="rosa" data-hero>
+      <div class="dir"><svg class="esquema" data-particula="up"></svg><div><span class="l1"><span class="nom">UP</span><span class="pron">ap</span><span class="lit">hacia arriba</span><span class="ref">ING-PV-02</span></span><p>más (<span class="en">turn up</span>) · completo (<span class="en">use up</span>) · a la vista (<span class="en">show up</span>) · despierto (<span class="en">wake up</span>)</p></div></div>
+      <div class="dir"><svg class="esquema" data-particula="down"></svg><div><span class="l1"><span class="nom">DOWN</span><span class="pron">daun</span><span class="lit">hacia abajo</span><span class="ref">ING-PV-03</span></span><p>menos (<span class="en">slow down</span>) · fijo, anotado (<span class="en">write down</span>) · roto o rechazado (<span class="en">break down</span>)</p></div></div>
+      <div class="dir"><svg class="esquema" data-particula="in"></svg><div><span class="l1"><span class="nom">IN</span><span class="pron">in</span><span class="lit">hacia adentro</span><span class="ref">ING-PV-04</span></span><p>entrar en un sistema (<span class="en">check in</span>) · agregar, entregar (<span class="en">fill in</span>) · quedarse (<span class="en">stay in</span>)</p></div></div>
+      <div class="dir"><svg class="esquema" data-particula="out"></svg><div><span class="l1"><span class="nom">OUT</span><span class="pron">aut</span><span class="lit">hacia afuera</span><span class="ref">ING-PV-05</span></span><p>irse (<span class="en">go out</span>) · acabarse (<span class="en">run out</span>) · a la luz (<span class="en">find out</span>) · resolver (<span class="en">sort out</span>)</p></div></div>
+      <div class="dir"><svg class="esquema" data-particula="on"></svg><div><span class="l1"><span class="nom">ON</span><span class="pron">on</span><span class="lit">en contacto</span><span class="ref">ING-PV-06</span></span><p>puesto (<span class="en">put on</span>) · encendido (<span class="en">turn on</span>) · seguir (<span class="en">carry on</span>) · depender (<span class="en">rely on</span>)</p></div></div>
+      <div class="dir"><svg class="esquema" data-particula="off"></svg><div><span class="l1"><span class="nom">OFF</span><span class="pron">of</span><span class="lit">separado</span><span class="ref">ING-PV-07</span></span><p>irse (<span class="en">set off</span>) · apagado, cancelado (<span class="en">turn off</span>, <span class="en">call off</span>) · terminar (<span class="en">knock off</span>)</p></div></div>
+      <div class="dir"><svg class="esquema" data-particula="back"></svg><div><span class="l1"><span class="nom">BACK</span><span class="pron">bak</span><span class="lit">de vuelta</span><span class="ref">ING-PV-08</span></span><p>devolver (<span class="en">give back</span>) · responder (<span class="en">call back</span>) · recordar (<span class="en">look back</span>) · y su pareja, AWAY</p></div></div>
+      <div class="dir"><svg class="esquema" data-particula="over"></svg><div><span class="l1"><span class="nom">OVER</span><span class="pron"><span class="tonica">OU</span>-va</span><span class="lit">por encima</span><span class="ref">ING-PV-09</span></span><p>al otro lado (<span class="en">come over</span>) · repasar (<span class="en">look over</span>) · superar (<span class="en">get over</span>) · caer (<span class="en">fall over</span>)</p></div></div>
+    </div>
+    <p class="opuestos">UP/DOWN, IN/OUT y ON/OFF son opuestos. En los esquemas, la bola azul es lo que se mueve; la punteada, dónde estaba.</p>
+
+    <div class="dos-col">
+      <div>
+        <div class="seccion"><span class="num ocre">2</span><span class="h2">Por qué nos cuestan</span></div>
+        <table class="contraste">
+          <tr><th>En castellano, la dirección va en el verbo</th><th>En inglés, va en la partícula</th></tr>
+          <tr><td class="es"><b>Salió</b> corriendo.</td><td class="ing">He ran <b>out</b>.</td></tr>
+          <tr><td class="es"><b>Volví</b> caminando.</td><td class="ing">I walked <b>back</b>.</td></tr>
+          <tr><td class="es"><b>Subí</b> la valija.</td><td class="ing">I carried the case <b>up</b>.</td></tr>
+          <tr><td class="es"><b>Entrá</b>.</td><td class="ing">Come <b>in</b>.</td></tr>
+        </table>
+        <p class="nota">El inglés deja el verbo para el cómo (<i>run, walk, carry</i>). Con verbos de sentido amplio, como <span class="en">get</span>, <span class="en">put</span> o <span class="en">take</span>, casi todo el significado lo carga la partícula.</p>
+      </div>
+      <div>
+        <div class="seccion"><span class="num ocre">3</span><span class="h2">Dónde va el objeto</span></div>
+        <div class="patron"><span class="tipo">Separable</span><span><span class="pv">turn <i class="obj"></i> off</span><span class="ok">turn off the light · turn the light off · turn it off</span> · nunca <span class="mal">turn off it</span></span></div>
+        <div class="patron"><span class="tipo">Junto</span><span><span class="pv">look after <i class="obj"></i></span><span class="ok">look after the kids · look after them</span></span></div>
+        <div class="patron"><span class="tipo">Sin objeto</span><span><span class="pv">get up</span><span class="ok">I get up at six.</span></span></div>
+        <div class="patron"><span class="tipo">Tres palabras</span><span><span class="pv">run out of <i class="obj"></i></span><span class="ok">We've run out of milk.</span> Siempre juntas.</span></div>
+        <p class="nota">Regla de oro: un pronombre (<span class="en">it, them, me</span>…) va siempre en el hueco. El diccionario lo muestra: <i>turn something off</i>, <i>look after somebody</i>. <span class="ref">Murphy U137</span></p>
+      </div>
+    </div>
+
+    <div class="dos-col">
+      <div>
+        <div class="seccion"><span class="num">4</span><span class="h2">Cómo suenan</span></div>
+        <ul class="lista-seca">
+          <li>Suena fuerte la partícula: <span class="en">pick it UP</span>. Con preposición, el verbo: <span class="en">rely on me</span> <span class="pron">(ri-<span class="tonica">LAI</span> on mi)</span>.</li>
+          <li>Como sustantivo, el acento va adelante: <span class="en">a CHECK-out</span>, <span class="en">a TAKE-away</span>.</li>
+        </ul>
+        <p class="nota gris">Son tendencias, no leyes. Clave de la pronunciación: ING-L-00.</p>
+      </div>
+      <div>
+        <div class="seccion"><span class="num">5</span><span class="h2">Tres niveles</span></div>
+        <ul class="lista-seca">
+          <li><b>Literal:</b> <span class="en">sit down</span> se entiende solo.</li>
+          <li><b>Figurado:</b> <span class="en">slow down</span>: abajo es menos.</li>
+          <li><b>Idiomático:</b> <span class="en">put up with</span> (aguantar): entero.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="nota">En inglés aparece, en promedio, un phrasal verb cada 150 palabras, y los más frecuentes tienen 5,6 significados cada uno.<sup>1</sup> Por eso esta colección los agrupa por significado. Los grupos son un modelo para recordar, no una regla: hay usos que no encajan.<sup>2</sup></p>
+  </main>
+
+  <footer class="pie">
+    <span>ING-PV-01 · versión 1 · 2026-10-17</span>
+    <span class="fuentes"><sup>1</sup> Gardner y Davies (2007), <i>TESOL Quarterly</i> 41(2), British National Corpus. <sup>2</sup> Rudzka-Ostyn (2003), <i>Word Power</i>. Sección 2: Talmy (2000). Consultado el 2026-10-17.</span>
+    <span>Enciclopedia para imprimir</span>
+  </footer>
+</div>
+<script src="../../estilo/particulas.js"></script>
+</body>
+</html>

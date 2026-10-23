@@ -1,0 +1,70 @@
+/* Componentes de la colección "Phrasal verbs por partícula" (ING-PV).
+   Se usa junto con llegada.css (secciones, recuadro kiwi, .ej, .tr).
+   Escala de CAL-01: lectura en 10 pt o más. */
+
+/* El hueco del objeto: ahí va it, them, the boxes… (ocre = estructura) */
+.obj {
+  display: inline-block;
+  width: 3.6mm;
+  height: 3.2mm;
+  border: 0.35mm solid var(--ocre);
+  background: var(--ocre-10);
+  border-radius: 0.6mm;
+  vertical-align: -0.35mm;
+  margin: 0 0.7mm;
+}
+
+/* Mapa radial: dos ramas arriba, el núcleo en el medio, dos ramas abajo */
+.radial { position: relative; display: grid; grid-template-columns: 1fr 1fr; column-gap: 6mm; row-gap: 4.5mm; }
+.radial > svg.rayos { position: absolute; left: 0; top: 0; z-index: 0; pointer-events: none; overflow: visible; }
+.centro { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 28mm 1fr; align-items: center; gap: 5mm; position: relative; z-index: 1; }
+.nucleo {
+  width: 28mm; height: 28mm; border-radius: 50%;
+  border: 0.7mm solid var(--negro); background: white;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+.nucleo .p { font-family: var(--fuente-titulo); font-weight: 800; font-size: 25pt; line-height: 1; }
+.nucleo .pron { font-size: 10pt; margin-top: 0.6mm; }
+.centro .literal { display: grid; grid-template-columns: 30mm 1fr; gap: 2.5mm; align-items: center; }
+.centro svg.esquema { width: 30mm; height: 20mm; }
+.centro .literal p, .centro .idea p { margin: 0; font-size: 10.5pt; line-height: 1.28; }
+.centro .literal b { display: block; font-family: var(--fuente-titulo); font-size: 11.5pt; }
+.centro .idea { font-size: 10.5pt; line-height: 1.28; }
+.centro .idea .refs { display: block; margin-top: 1.2mm; }
+
+.rama { position: relative; z-index: 1; background: white; border: 0.3mm solid var(--negro); }
+.rama > .cab { display: flex; align-items: center; gap: 2mm; padding: 1mm 2.5mm; background: var(--gris-05); border-bottom: 0.3mm solid var(--negro); }
+.rama.literal > .cab { background: var(--azul-10); }
+.rama > .cab .t { font-family: var(--fuente-titulo); font-weight: 800; font-size: 12pt; line-height: 1.1; }
+.rama > .cab .g { font-size: 10pt; color: #333; margin-left: auto; text-align: right; }
+
+/* Un verbo: forma + pronunciación + significado / ejemplo / traducción */
+.verbo { padding: 0.7mm 2.5mm 0.8mm; border-bottom: 0.2mm solid #d4d4d4; line-height: 1.19; }
+.verbo:last-child { border-bottom: none; }
+.verbo .pv { color: var(--azul); font-weight: 700; font-size: 11pt; white-space: nowrap; }
+.verbo .pron { font-size: 10pt; margin-left: 1.2mm; white-space: nowrap; }
+.verbo .sig { font-size: 10.5pt; }
+.verbo .sig::before { content: "— "; color: var(--gris); }
+.verbo .ej { display: block; font-size: 10.5pt; }
+.verbo .tr { display: block; font-size: 10pt; }
+.marca { font-size: 10pt; font-weight: 700; color: var(--ocre); white-space: nowrap; }
+
+/* Leyenda del hueco, debajo del mapa */
+.leyenda-pv { font-size: 10pt; color: #333; margin: 1.6mm 0 0; }
+
+/* Banda de abajo: práctica | notas */
+.banda { display: grid; grid-template-columns: 1.08fr 1fr; gap: 5mm; margin-top: 3mm; }
+.practica .item { font-size: 10.5pt; height: 7.2mm; display: flex; align-items: flex-end; border-bottom: 0.2mm solid #d4d4d4; padding-bottom: 0.8mm; }
+.practica .item .letra { font-weight: 700; color: var(--gris); width: 4mm; flex: none; }
+.hueco { display: inline-block; min-width: 19mm; border-bottom: 0.3mm solid #7a7a7a; height: 4.2mm; margin: 0 0.8mm; vertical-align: -0.6mm; }
+.hueco.corto { min-width: 11mm; }
+.notas { display: flex; flex-direction: column; gap: 2.5mm; }
+.notas .alerta p { margin: 0.6mm 0 0; }
+.notas .kiwi dl { gap: 0.6mm 2.5mm; }
+
+/* Recuadro aparte para una partícula de pareja (away en la hoja de back) */
+.pareja { border: 0.35mm dashed var(--negro); padding: 2mm 2.5mm; display: grid; grid-template-columns: 26mm 1fr; gap: 1mm 3mm; align-items: start; }
+.pareja svg.esquema { width: 26mm; height: 17mm; }
+.pareja .lista { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8mm 4mm; font-size: 10.5pt; line-height: 1.25; }
+.pareja .lista .pv { color: var(--azul); font-weight: 700; }
+.nucleo .p.largo { font-size: 19pt; }

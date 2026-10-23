@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ING-T-02 La estructura del verbo</title>
+<link rel="stylesheet" href="../../estilo/combi.css">
+<link rel="stylesheet" href="../../estilo/escritura.css">
+<style>
+  .seccion { display: flex; align-items: center; gap: 2mm; margin: 0 0 2.2mm; }
+  .seccion .h2 { margin: 0; }
+  .despiece { display: grid; grid-template-columns: 1fr 16mm 1fr 16mm 1fr 16mm 1fr; align-items: stretch; }
+  .pieza { border: 0.45mm solid var(--negro); display: flex; flex-direction: column; }
+  .pieza .palabra { font-family: var(--fuente-titulo); font-weight: 800; font-size: 20pt; text-align: center; padding: 3mm 1mm 2mm; line-height: 1; }
+  .pieza .detalle { display: block; font-family: var(--fuente-texto); font-weight: 400; font-size: 10pt; color: #444; margin-top: 1.4mm; }
+  .pieza .rol { border-top: 0.3mm solid var(--negro); padding: 1.6mm 2mm; font-size: 10pt; line-height: 1.25; flex: 1; }
+  .pieza .rol b { display: block; letter-spacing: 0.04em; }
+  .pieza.p-aux .palabra { color: var(--ocre); background: var(--ocre-10); }
+  .pieza.p-ing .palabra { color: var(--azul); background: var(--azul-10); }
+  .flecha { display: flex; flex-direction: column; align-items: center; padding-top: 5mm; gap: 1mm; }
+  .flecha svg { width: 11mm; height: 6mm; }
+  .flecha span { font-size: 10pt; text-align: center; line-height: 1.1; color: #444; }
+  .quitar { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm 6mm; margin-top: 2mm; }
+  .quitar div { border-left: 0.8mm solid var(--ocre); padding: 0.6mm 0 0.6mm 2.4mm; line-height: 1.3; }
+  .quitar .f { color: var(--azul); font-weight: 700; font-size: 11pt; display: block; }
+  .quitar .f .aux { color: var(--ocre); }
+  table.matriz { width: 100%; border-collapse: collapse; font-size: 10.5pt; }
+  .matriz th, .matriz td { border: 0.25mm solid var(--gris-linea); padding: 1.6mm 2mm; text-align: left; vertical-align: top; }
+  .matriz th { font-size: 10pt; letter-spacing: 0.05em; background: var(--gris-05); }
+  .matriz th.ahora { color: var(--bermellon); }
+  .matriz td.etq { font-weight: 700; background: var(--gris-05); width: 30mm; font-size: 10pt; }
+  .matriz .f { color: var(--azul); font-weight: 600; }
+  .matriz .f .aux { color: var(--ocre); font-weight: 800; }
+  .matriz .s { color: var(--bermellon); font-weight: 800; }
+  .matriz .nota { display: block; font-size: 10pt; color: #444; }
+</style>
+</head>
+<body>
+<div class="hoja">
+  <header class="cabecera">
+    <div class="codigo">ING-T-02</div>
+    <div>
+      <span class="coleccion">Inglés · Atlas de los tiempos verbales · 2 de 11 · corte</span>
+      <h1 class="titulo">La estructura del verbo</h1>
+      <p class="bajada">Los 12 tiempos se arman encastrando las mismas piezas, siempre en el mismo orden. Cada pieza decide la forma de la que viene después.</p>
+    </div>
+    <div class="lateral">Mapa: ING-T-01<br>Negar y preguntar: ING-T-03</div>
+  </header>
+
+  <main class="cuerpo">
+    <div class="seccion"><span class="num">1</span><span class="h2">Despiece de la forma más larga: <span class="en">I will have been working</span></span></div>
+    <div class="despiece" data-hero>
+      <div class="pieza p-aux"><div class="palabra">will</div><div class="rol"><b>1 · TIEMPO</b>will = futuro. En presente y pasado no hay pieza aparte: el tiempo lo lleva el primer verbo.</div></div>
+      <div class="flecha"><svg viewBox="0 0 11 6"><path d="M0.5 3 H9 M7 1 L9.6 3 L7 5" fill="none" stroke="#000" stroke-width="0.6"/></svg><span>pide<br>forma<br>base</span></div>
+      <div class="pieza p-aux"><div class="palabra">have</div><div class="rol"><b>2 · PERFECTO</b>have + participio. Conecta con el momento de referencia.</div></div>
+      <div class="flecha"><svg viewBox="0 0 11 6"><path d="M0.5 3 H9 M7 1 L9.6 3 L7 5" fill="none" stroke="#000" stroke-width="0.6"/></svg><span>pide<br>participio</span></div>
+      <div class="pieza p-aux"><div class="palabra">been<span class="detalle">(be → been)</span></div><div class="rol"><b>3 · CONTINUO</b>be + -ing. Muestra la acción en curso.</div></div>
+      <div class="flecha"><svg viewBox="0 0 11 6"><path d="M0.5 3 H9 M7 1 L9.6 3 L7 5" fill="none" stroke="#000" stroke-width="0.6"/></svg><span>pide<br>-ing</span></div>
+      <div class="pieza p-ing"><div class="palabra">working<span class="detalle">(work → working)</span></div><div class="rol"><b>4 · VERBO</b>El significado. Siempre va último.</div></div>
+    </div>
+    <p style="margin:3mm 0 0"><b>La regla:</b> el orden nunca cambia (tiempo → perfecto → continuo → verbo). Sacá las piezas que no necesitás y el resto se acomoda:</p>
+    <div class="quitar">
+      <div><span class="f">I <span class="aux">have been</span> working</span>sin <i>will</i>: presente</div>
+      <div><span class="f">I <span class="aux">had been</span> working</span>pasado: el tiempo va en la primera pieza (have → had)</div>
+      <div><span class="f">I <span class="aux">will be</span> working</span>sin perfecto: futuro continuo</div>
+      <div><span class="f">I <span class="aux">will</span> work</span>solo tiempo + verbo: futuro simple</div>
+    </div>
+
+    <div class="seccion" style="margin-top:4mm"><span class="num">2</span><span class="h2">Las 12 formas con el verbo <span class="en">work</span></span></div>
+    <table class="matriz">
+      <tr><th></th><th>PASADO</th><th class="ahora">PRESENTE</th><th>FUTURO</th></tr>
+      <tr><td class="etq">Simple</td>
+        <td><span class="f">worked</span><span class="nota">irregulares: went, saw, had…</span></td>
+        <td><span class="f">work · she work<span class="s">s</span></span><span class="nota">he, she, it: -s</span></td>
+        <td><span class="f"><span class="aux">will</span> work</span></td></tr>
+      <tr><td class="etq">Continuo</td>
+        <td><span class="f"><span class="aux">was / were</span> working</span></td>
+        <td><span class="f"><span class="aux">am / is / are</span> working</span></td>
+        <td><span class="f"><span class="aux">will be</span> working</span></td></tr>
+      <tr><td class="etq">Perfecto</td>
+        <td><span class="f"><span class="aux">had</span> worked</span></td>
+        <td><span class="f"><span class="aux">have</span> worked</span><span class="nota">she <b>has</b> worked</span></td>
+        <td><span class="f"><span class="aux">will have</span> worked</span></td></tr>
+      <tr><td class="etq">Perfecto continuo</td>
+        <td><span class="f"><span class="aux">had been</span> working</span></td>
+        <td><span class="f"><span class="aux">have been</span> working</span><span class="nota">she <b>has</b> been working</span></td>
+        <td><span class="f"><span class="aux">will have been</span> working</span></td></tr>
+    </table>
+    <p style="margin:2mm 0 0">La persona solo cambia la forma en presente (-s, has, am / is / are) y en <i>was / were</i>. Todo lo demás es igual para I, you, she, we, they.</p>
+
+    <div class="seccion" style="margin-top:4mm"><span class="num">✎</span><span class="h2">Practicá: armá la forma con las piezas</span></div>
+    <div class="frases" style="margin-left:0">
+      <div class="f"><span><span class="letra">a</span>they · wait · <b>past continuous</b></span><span></span><span></span></div>
+      <div class="f"><span><span class="letra">b</span>I · finish · <b>future perfect</b></span><span></span><span></span></div>
+      <div class="f"><span><span class="letra">c</span>she · study · <b>present perfect continuous</b></span><span></span><span></span></div>
+      <div class="f"><span><span class="letra">d</span>we · eat · <b>past perfect</b></span><span></span><span></span></div>
+      <div class="f"><span><span class="letra">e</span>he · drive · <b>future continuous</b></span><span></span><span></span></div>
+    </div>
+    <p class="soluciones">a) they were waiting · b) I will have finished · c) she has been studying · d) we had eaten · e) he will be driving</p>
+  </main>
+
+  <footer class="pie">
+    <span>ING-T-02 · versión 2.1 · 2026-10-17</span>
+    <span class="fuentes">Orden de los auxiliares: gramática estándar del inglés (ver Murphy, <i>English Grammar in Use</i>, 5.ª ed., unidades 1–25).</span>
+    <span>Enciclopedia para imprimir</span>
+  </footer>
+</div>
+</body>
+</html>
