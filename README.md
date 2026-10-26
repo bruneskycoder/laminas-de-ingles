@@ -22,7 +22,7 @@ Para imprimir una sola hoja, abrí el compilado y elegí ese rango de páginas. 
 
 ## Cómo se hizo
 
-No programo. Construyo con Claude Code, y como no leo el código, la calidad no depende de revisarlo sino de dos cosas: un chequeo automático que frena la construcción y hojas impresas en papel, para verlas de verdad.
+Tengo bases de programación, de la facultad y autodidactas, aunque nunca me dediqué a ella. Construyo con Claude Code y no practico *vibe coding*: como no reviso el código línea por línea, la calidad no depende de confiar en el resultado sino de dos controles: un chequeo automático que frena la construcción y hojas impresas en papel, para verlas de verdad.
 
 Las decisiones de diseño fueron mías: qué colecciones hacían falta (tiempos verbales, inglés para llegar a Nueva Zelanda y phrasal verbs), una guía de estilo basada en la *Enciclopedia Combi Visual* que se usó como especificación, dejar afuera el campo para concentrarme en Nueva Zelanda y el inglés, y limitar la práctica a escritura guiada. También propuse nueve repositorios para reutilizar: Claude los leyó y descartó cuatro. Claude escribió las hojas, el generador y el chequeo, y los fue probando.
 
